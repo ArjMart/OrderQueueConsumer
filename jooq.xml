@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE configuration>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.11.0.xsd">
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>
+    	<![CDATA[
+    	jdbc:mysql://db1.cyf2ksy495ph.us-west-2.rds.amazonaws.com:3306/arjmart?useSSL=true&verifyServerCertificate=false
+    	]]>
+    </url>
+    <user>root</user>
+    <password>abcdabcd</password>
+  </jdbc>
+
+  <generator>
+    <database>
+      <name>org.jooq.meta.mysql.MySQLDatabase</name>
+      <includes>.*</includes>
+      <excludes>NONE</excludes>
+      <inputSchema>arjmart</inputSchema>
+    </database>
+    <generate></generate>
+
+    <target>
+      <!-- The destination package of your generated classes (within the
+           destination directory)
+           
+           jOOQ may append the schema name to this package if generating multiple schemas,
+           e.g. org.jooq.your.packagename.schema1
+                org.jooq.your.packagename.schema2 -->
+      <packageName>com.arjvik.arjmart.orderqueueconsumer.schema</packageName>
+
+      <!-- The destination directory of your generated classes -->
+      <directory>src</directory>
+    </target>
+  </generator>
+</configuration>
