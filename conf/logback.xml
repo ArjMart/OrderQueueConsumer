@@ -1,0 +1,13 @@
+<!DOCTYPE logback-config>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.padual.com/java/logback.xsd">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+ 
+  <root level="info">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
