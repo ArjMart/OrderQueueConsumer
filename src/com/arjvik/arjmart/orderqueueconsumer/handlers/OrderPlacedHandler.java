@@ -41,7 +41,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.andreinc.aleph.AlephFormatter;
 import net.andreinc.aleph.AlephFormatter.Styles;
 
-@MessageQueueHandler("OrderPlaced")
+@MessageQueueHandler("arjmart.OrderPlaced")
 @Slf4j
 public class OrderPlacedHandler implements MessageListener {
 	
@@ -225,7 +225,7 @@ public class OrderPlacedHandler implements MessageListener {
 	
 	@SneakyThrows({JsonProcessingException.class, JMSException.class})
 	private void runOrderLineFulfillmentPipeline(OrderLine orderLine) {
-		jmsservice.sendJsonMessage("OrderLineFulfillment", orderLine);
+		jmsservice.sendJsonMessage("arjmart.OrderLineFulfillment", orderLine);
 	}
 	
 	@Data

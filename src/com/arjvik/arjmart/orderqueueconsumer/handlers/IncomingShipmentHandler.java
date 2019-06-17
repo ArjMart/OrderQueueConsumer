@@ -27,7 +27,7 @@ import com.google.inject.Inject;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
-@MessageQueueHandler("IncomingShipment")
+@MessageQueueHandler("arjmart.IncomingShipment")
 @Slf4j
 public class IncomingShipmentHandler implements MessageListener {
 
@@ -93,7 +93,7 @@ public class IncomingShipmentHandler implements MessageListener {
 
 	@SneakyThrows({JsonProcessingException.class, JMSException.class})
 	private void runOrderLineFulfillmentPipeline(OrderLine orderLine) {
-		jmsservice.sendJsonMessage("OrderLineFulfillment", orderLine);
+		jmsservice.sendJsonMessage("arjmart.OrderLineFulfillment", orderLine);
 	}
 
 	private List<OrderLine> getOrderLineToFulfill(Inventory incomingShipment) {

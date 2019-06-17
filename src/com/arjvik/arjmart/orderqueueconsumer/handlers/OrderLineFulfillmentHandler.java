@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.andreinc.aleph.AlephFormatter;
 import net.andreinc.aleph.AlephFormatter.Styles;
 
-@MessageQueueHandler("OrderLineFulfillment")
+@MessageQueueHandler("arjmart.OrderLineFulfillment")
 @Slf4j
 public class OrderLineFulfillmentHandler implements MessageListener {
 	
